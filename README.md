@@ -1,4 +1,4 @@
-# XML rest API
+# Simple bank app(test)
 
 ### Description
 Application intended to register user and provide account to store user balance. 
