@@ -27,7 +27,7 @@ Go to app page:
 
 `http://localhost:8080/`
 
-###Register user:
+### Register user:
 Post the following request with 'Content-Type' 'application/xml' headers to `localhost:8080/api/user/register` uri address:
 
 `<?xml version="1.0" encoding="utf-8"?>
