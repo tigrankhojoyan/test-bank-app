@@ -69,7 +69,7 @@ The following responses are possible:
  
 
  
-###Get user balance:
+### Get user balance:
 
 Post the following request with 'Content-Type' 'application/xml' headers to `localhost:8080/api/user/getbalance` uri address:
 
