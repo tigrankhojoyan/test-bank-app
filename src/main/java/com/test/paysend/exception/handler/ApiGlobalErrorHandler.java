@@ -6,12 +6,12 @@ import com.test.paysend.exception.DuplicateRecordDAOException;
 import com.test.paysend.exception.InvalidCredentialsException;
 import com.test.paysend.exception.InvalidUserException;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.dao.DuplicateKeyException;
 
 /**
  * Global error handler

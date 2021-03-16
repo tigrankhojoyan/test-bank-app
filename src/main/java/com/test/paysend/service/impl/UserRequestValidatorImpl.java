@@ -27,7 +27,7 @@ public class UserRequestValidatorImpl implements RequestValidator<UserDTO> {
         log.info("Validating {} user request data", request);
         request.setPassword(request.getPassword());
         request.setPassword(request.getUserName());
-        if(RequestTypes.findByValue(request.getRequestType()) == null) {
+        if (RequestTypes.findByValue(request.getRequestType()) == null) {
             log.warn("Request type is invalid({})", request.getRequestType());
             throw new BusinessException("Invalid request type");
         }

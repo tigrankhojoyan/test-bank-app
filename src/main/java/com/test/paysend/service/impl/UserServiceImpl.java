@@ -5,7 +5,6 @@ import com.test.paysend.dao.UserDAO;
 import com.test.paysend.dto.UserDTO;
 import com.test.paysend.exception.DuplicateRecordDAOException;
 import com.test.paysend.exception.InvalidCredentialsException;
-import com.test.paysend.exception.InvalidUserException;
 import com.test.paysend.model.Account;
 import com.test.paysend.model.User;
 import com.test.paysend.service.UserService;
@@ -14,7 +13,6 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
@@ -43,9 +41,9 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional//(isolation = Isolation.SERIALIZABLE)
     public void registerUser(UserDTO user) {
-//        if (userDAO.checkIfUserExistsByUserName(user.getUserName())) {
-//            throw new DuplicateRecordDAOException("User by provided username already exists(" + user.getUserName() + ")");
-//        }
+        if (userDAO.checkIfUserExistsByUserName(user.getUserName())) {
+            throw new DuplicateRecordDAOException("User by provided username already exists(" + user.getUserName() + ")");
+        }
         User userDb = userDataMapper.convertDtoToModel(user);
         userDb.setPassword(encoder.encode(user.getPassword()));
         Long userId = userDAO.save(userDb);

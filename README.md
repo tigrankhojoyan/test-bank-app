@@ -12,8 +12,10 @@ Spring Boot, Spring JDBC, Spring Validator, Lombok, Jackson xml
 
 ### Installation
 You should have Java 11, mysql and maven installed on your machine to run this app.
+## NOTE:
+You should specify your mysql credentials in application.yml file
 
-Steps:
+Steps to run application:
 
 Install:
 
