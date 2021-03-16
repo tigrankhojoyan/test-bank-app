@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    platform: mysql
+    initialization-mode: always
+    url: 'jdbc:mysql://localhost:3306/bankDb?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf-8&autoReconnect=true'
+    username: 'root'
+    password: 'zaqxsw12'

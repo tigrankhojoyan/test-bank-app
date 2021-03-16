@@ -1,0 +1,20 @@
+create database if not exists bankDb;
+
+use bankDb;
+
+CREATE TABLE IF NOT EXISTS USER (
+  id LONG NOT NULL AUTO_INCREMENT,
+  userName varchar(20) NOT NULL UNIQUE,
+  password varchar(20) NOT NULL,
+  PRIMARY KEY (id)
+) ENGINE=INNODB DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE IF NOT EXISTS ACCOUNT (
+  id LONG NOT NULL AUTO_INCREMENT,
+  amount DECIMAL NOT NULL DEFAULT 0.0,
+  bankName varchar(20) NOT NULL default 'SBERBANK',
+  user_id LONG,
+  PRIMARY KEY (id),
+  INDEX user_ind (user_id),
+  FOREIGN KEY (user_id) REFERENCES USER(id) ON DELETE CASCADE
+) ENGINE=INNODB DEFAULT CHARACTER SET = utf8;
