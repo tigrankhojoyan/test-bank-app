@@ -57,7 +57,7 @@ public class UserDTO extends RequestGeneric {
     }
 
     public String getUserName() {
-        if (password == null && !extra.isEmpty()) {
+        if (userName == null && !extra.isEmpty()) {
             return XmlUtils.findAttributeValueByProperty(LOGIN_STRING, extra);
         }
         return userName;
